@@ -15,6 +15,7 @@ class Proveedor extends Model
     }
     public function compras() {
         return $this->hasMany('App\Models\Compra');
+        
      }
 
 }
