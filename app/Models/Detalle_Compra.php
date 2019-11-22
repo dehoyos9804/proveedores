@@ -11,10 +11,10 @@ class Detalle_Compra extends Model
     protected $fillable = ['id', 'compra_id', 'proveedor_producto_id', 'cantidad','valor_unitario'];
 
     public function proveedor_productos() {
-       return $this->belongsTo('App\Models\Detalle_Compra');
+       return $this->belongsTo('App\Models\Proveedor_Producto');
     }
     
     public function compras() {
-        return $this->belongsTo('App\Models\Detalle_Compra');
+        return $this->belongsTo('App\Models\Compra');
      }
 }
