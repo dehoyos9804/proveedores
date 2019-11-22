@@ -13,6 +13,7 @@ class Proveedor extends Model
     public function productos() {
        return $this->belongsToMany('App\Models\Producto');
     }
+    
     public function compras() {
         return $this->hasMany('App\Models\Compra');
         

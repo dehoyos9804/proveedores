@@ -14,4 +14,8 @@ class Compra extends Model
        return $this->belongsTo('App\Models\Proveedor','proveedor_id');
        
     }
+    
+    public function detalle_compras() {
+        return $this->hasMany('App\Models\Detalle_Compra');
+     }
 }
