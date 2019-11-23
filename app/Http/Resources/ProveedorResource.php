@@ -19,6 +19,6 @@ class ProveedorResource extends JsonResource
             'nombre'=>$this->nombre,
             'direccion'=>$this->direccion,
             'telefono'=>$this->telefono,
-        ]
+        ];
     }
 }
