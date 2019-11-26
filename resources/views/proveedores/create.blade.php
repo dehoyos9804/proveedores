@@ -4,7 +4,8 @@
 <!-- START RESPONSIVE TABLES -->
 <div class="row">
       <div class="col-md-12">
-        <form class="form-horizontal" id="formcomida" name="formcomida" action="" method="POST">
+        <form class="form-horizontal" id="formcomida" name="formcomida" action="{{route('proveedores.store')}}" method="POST">
+         {{csrf_field()}}
           <div class="panel panel-warning">
             <div class="panel-heading">
               <h3 class="panel-title"><span class="fa  fa-cutlery"></span><b> Nuevo proveedores</b></h3>
@@ -72,8 +73,9 @@
               </div>
               </div><!--fin panel body-->
               <div class="panel-footer">
-                <a href="" class="btn btn-default">Cancelar</a>
+                <a href="{{route('proveedores.index')}}" class="btn btn-default">Cancelar</a>
                 <button class="btn btn-info pull-right">Registrar</button>
+                
             </div>
           </div>
         </form>

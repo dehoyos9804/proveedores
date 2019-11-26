@@ -17,4 +17,7 @@ Route::get('/', function () {
 
 Auth::routes();
 
+// rutas proveedor
 Route::get('/home', 'HomeController@index')->name('home');
+$router->get('proveedor/{id}/delete',['as'=>'proveedor.delete', 'uses'=>'ProveedorController@delete',]);
+Route::Resource('proveedores','ProveedorController');
