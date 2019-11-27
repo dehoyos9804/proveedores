@@ -28,11 +28,11 @@
     <a href="{{route('compra.index')}}"><span class="fa  fa-shopping-cart"></span> <span class="xn-text">Compras</span></a>
 </li>
 <li>
-    <a href="#"><span class="fa fa-qrcode"></span> <span class="xn-text">Categorias</span></a>
+    <a href="{{route('compra.index')}}"><span class="fa fa-qrcode"></span> <span class="xn-text">Categorias</span></a>
 </li>
 <li>
-    <a href="#"><span class="fa fa-ticket"></span> <span class="xn-text">Proveedores</span></a>
+    <a href="{{route('proveedores.index')}}"><span class="fa fa-ticket"></span> <span class="xn-text">Proveedores</span></a>
 </li>
 <li>
-    <a href="#"><span class="fa fa-folder-open-o"></span> <span class="xn-text">Productos</span></a>
+    <a href="{{route('productos.index')}}"><span class="fa fa-folder-open-o"></span> <span class="xn-text">Productos</span></a>
 </li>

@@ -14,8 +14,9 @@ class Producto extends Model
        return $this->belongsTo('App\Models\Categoria','categoria_id');
     }
 
-   //muchos a muchos
+   
    public function proveedores() {
-        return $this->belongsToMany('App\Models\Proveedor');
+        return $this->belongsToMany('App\Models\Proveedor')
+        ->withTimestamps();
    }
 }

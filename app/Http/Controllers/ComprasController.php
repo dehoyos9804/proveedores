@@ -5,7 +5,7 @@ use App\Models\Producto;
 use App\Models\Proveedor;
 use App\Models\Compra;
 use App\Models\Detalle_Compra;
-use App\Models\Proveedor_Producto;
+use App\Models\Producto_Proveedor;
 
 use Illuminate\Http\Request;
 
@@ -22,11 +22,11 @@ class ComprasController extends Controller
     }
 
     public function create(){
-        $varprovedor_producto = Proveedor_Producto::all();
-        $varproducto = Proveedor_Producto::select('proveedor_productos.id', 'productos.nombre')
-                        ->from('proveedor_productos')
+        $varprovedor_producto = Producto_Proveedor::all();
+        $varproducto = Producto_Proveedor::select('producto_proveedor.id', 'productos.nombre')
+                        ->from('producto_proveedor')
                         ->join('productos', function($query){
-                            $query->on('productos.id', '=','proveedor_productos.producto_id');
+                            $query->on('productos.id', '=','producto_proveedor.producto_id');
                         })->get();
         $varproveedores=Proveedor::all();
         $compra_id=Compra::all()->last();

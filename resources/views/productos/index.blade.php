@@ -8,7 +8,7 @@
         <div class="panel-heading">
             <h2 class="panel-title">Informe de productos</h2>
                 <div class="btn-group pull-right">
-                    <a href="#" class="btn btn-danger"><i class="fa fa-bars"></i>Nuevo Producto</a>
+                    <a href="{{ route('productos.create') }}" class="btn btn-danger"><i class="fa fa-bars"></i>Nuevo Producto</a>
                 </div>                                                       
             </div>
             <div class="panel-body panel-body-table">                                
@@ -28,18 +28,24 @@
                                                     <th width="120">actions</th>
                                                 </tr>
                                             </thead>
-                                            <tbody>                                            
-                                                <tr id="trow_1">
-                                                    <td class="text-center">1</td>
-                                                    <td><strong>John Doe</strong></td>
-                                                    <td><span class="label label-success">New</span></td>
-                                                    <td>24/09/2014</td>
-                                                    <td>24/09/2014</td>
-                                                    <td>
-                                                        <button class="btn btn-default btn-rounded btn-sm"><span class="fa fa-pencil"></span></button>
-                                                        <button class="btn btn-danger btn-rounded btn-sm" onClick="delete_row('trow_1');"><span class="fa fa-times"></span></button>
-                                                    </td>
-                                                </tr>
+                                            <tbody>  
+                                            @foreach($productos as $producto)
+                                            <tr>
+                                                <td>{{$producto->id}}</td>
+                                                <td>{{$producto->nombre}}</td>
+                                                <td>{{$producto->descripcion}}</td>
+                                                <td>{{$producto->categoria_id}}</td>
+                                                <td>$</td>  
+                                                <td>
+                                               
+                                                <a href="{{ route('productos.edit',['id'=>$producto->id]) }}"><button class="btn btn-default btn-rounded btn-sm"><span class="fa fa-pencil"></span></button>
+                                                
+                                               
+                                                <a href="{{ route('producto.delete',['id'=>$producto->id]) }}"><button class="btn btn-danger btn-rounded btn-sm" onClick="delete_row('trow_1');"><span class="fa fa-times"></span></button>
+                                               
+                                                </td>
+                                            </tr>
+                                            @endforeach                                          
                                             </tbody>
                                         </table>                               
                                 </div>

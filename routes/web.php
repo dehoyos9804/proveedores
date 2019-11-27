@@ -11,6 +11,7 @@
 |
 */
 
+
 /*Route::get('/', function () {
     return view('/compras/create');
 });*/
@@ -33,6 +34,12 @@ $router->get('detalle_compra/{id}/delete',['as'=>'detalle_compra.delete', 'uses'
 /* FIN RUTAS PARA EL DETALLE DE COMPRA*/
 
 // rutas proveedor
-Route::get('/home', 'HomeController@index')->name('home');
 $router->get('proveedor/{id}/delete',['as'=>'proveedor.delete', 'uses'=>'ProveedorController@delete',]);
 Route::Resource('proveedores','ProveedorController');
+
+//Rutas del Producto
+Route::resource( 'productos', 'ProductoController');
+$router->get('producto/{id}/delete',['as'=>'producto.delete', 'uses'=>'ProductoController@delete',]);
+$router->patch('producto/{id}',['as'=>'producto.update', 'uses'=>'ProductoController@update',]);
+$router->patch('productos',['as'=>'productos.list', 'uses'=>'ProductoController@list',]);
+
