@@ -4,7 +4,8 @@
 <!-- START RESPONSIVE TABLES -->
 <div class="row">
       <div class="col-md-12">
-        <form class="form-horizontal" id="formcomida" name="formcomida" action="" method="POST">
+        <form class="form-horizontal" id="formcomida" name="formcomida" action="{{route('productos.store')}}" method="POST">
+          {{csrf_field()}}
           <div class="panel panel-warning">
             <div class="panel-heading">
               <h3 class="panel-title"><span class="fa  fa-cutlery"></span><b> Nuevo Producto</b></h3>
@@ -37,9 +38,11 @@
                     <div class="form-group">
                         <label class="col-md-3 col-xs-12 control-label">Categoria</label>
                       <div class="col-md-6 col-xs-12">                                             
-                          <select class="form-control select" require data-live-search="true" id="categoria" name="categoria">
+                          <select class="form-control select" require data-live-search="true" id="categoria_id" name="categoria_id">
                               <option selected disabled value="0">==seleccione==</option>
-                                <option value=""></option>
+                              @foreach($categorias as $categoria)
+                                <option value="{{$categoria->id}}">{{$categoria->nombre}}</option>
+                              @endforeach  
                           </select>
                           <a data-toggle="modal">
                               <span class="help-block">
@@ -57,7 +60,9 @@
                       <div class="col-md-6 col-xs-12">                                             
                           <select class="form-control select" require data-live-search="true" id="proveedor_id" name="proveedor_id">
                               <option selected disabled value="0">==seleccione==</option>
-                                <option value=""></option>
+                              @foreach($proveedores as $proveedor)
+                                <option value="{{$proveedor->id}}">{{$proveedor->nombre}}</option>
+                              @endforeach  
                           </select>
                           <a data-toggle="modal">
                               <span class="help-block">
@@ -73,8 +78,8 @@
               </div>
               </div><!--fin panel body-->
               <div class="panel-footer">
-              <a href="" class="btn btn-default">Cancelar</a>
-              <button class="btn btn-info pull-right">Registrar</button>
+              <a href="{{route('productos.index')}}" class="btn btn-default">Cancelar</a>
+              <button type='submit 'class="btn btn-info pull-right">Registrar</button>
             </div>
           </div>
         </form>
