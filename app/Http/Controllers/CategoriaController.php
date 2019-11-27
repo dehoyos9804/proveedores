@@ -9,7 +9,6 @@ class CategoriaController extends Controller
 {
     public function index(){
         
-        //return csrf_token();
         $categorias=Categoria::all();
         return view('categorias.index' ,['categorias'=>$categorias]);
     }

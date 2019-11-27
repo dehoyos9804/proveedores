@@ -37,7 +37,7 @@ class ComprasController extends Controller
                 'compra_id'=>$compra_id]);
     }
 
-    public function store(CompraRequest $request){
+    public function store(Request $request){
 
         $compra=new Compra;
         $compra->fecha=$request->input('fecha_compra');
@@ -64,7 +64,7 @@ class ComprasController extends Controller
 
             $detalle->compra_id=$compra_id;
             
-            $detalle->proveedor_producto_id=$codproveedor_producto[$contador];
+            $detalle->producto_proveedor_id=$codproveedor_producto[$contador];
             $detalle->cantidad=$cantidad[$contador];
             $detalle->valor_unitario=$valor_unitario[$contador];
             $detalle->save();
