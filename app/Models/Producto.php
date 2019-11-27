@@ -18,5 +18,8 @@ class Producto extends Model
    public function proveedores() {
         return $this->belongsToMany('App\Models\Proveedor')
         ->withTimestamps();
-   }
+        
+     }
 }
+
+

@@ -6,6 +6,7 @@ use App\Models\Proveedor;
 use App\Models\Compra;
 use App\Models\Detalle_Compra;
 use App\Models\Producto_Proveedor;
+use App\Htttp\Requests\CompraRequest;
 
 use Illuminate\Http\Request;
 
@@ -36,7 +37,7 @@ class ComprasController extends Controller
                 'compra_id'=>$compra_id]);
     }
 
-    public function store(Request $request){
+    public function store(CompraRequest $request){
 
         $compra=new Compra;
         $compra->fecha=$request->input('fecha_compra');

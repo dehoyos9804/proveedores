@@ -24,8 +24,8 @@ class UsuarioRequest extends FormRequest
     public function rules()
     {
         return [
-            'nombre'=>'required|min:5|max:30|alpha_spaces|uppercase',
-           'apellido'=>'required|min:5|max:20|alpha_spaces',
+            'nombre'=>'required|min:5|max:30',
+           'apellido'=>'required|min:5|max:20',
            'correo'=>'required|email',
             'contraseña'=>'required|password|alpha_num|min:4',
         
@@ -49,10 +49,7 @@ class UsuarioRequest extends FormRequest
      'contraseña.required'=>'La Contraseña es requerida', 
  
      'nombre.min'=>'El Nombre debe tener al menos 5 caracteres',
-     'nombre.alpha_spaces'=>'El Nombre solo puede contener letras y espacios.',
-     'nombre.uppercase'=>'El Nombre debe tener alguna letra en mayúscula',
      'apellido.min'=>'El Apellido debe tener al menos 5 caracteres.',
-     'apellido.alpha_spaces'=>'El Apellido solo puede contener letras y espacios.',
 
      'correo.email'=>'El Email debe tener una dirección de correo electrónico.',
 

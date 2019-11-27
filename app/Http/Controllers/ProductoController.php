@@ -5,6 +5,7 @@ use App\Models\Producto;
 use App\Models\Proveedor;
 use App\Models\Categoria;
 use App\Models\Producto_Proveedor;
+use App\Htttp\Requests\ProductoRequest;
 
 
 use Illuminate\Http\Request;
@@ -65,7 +66,7 @@ class ProductoController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(ProductoRequest $request)
     {
         
         $datos=$request->all();
@@ -113,7 +114,6 @@ class ProductoController extends Controller
         ->join('producto_proveedor', 'proveedor.proveedor_id', '=', 'producto_proveedor.id')
         ->select('producto_proveedor.proveedor_id')
         ->get();
-        //
         return view('productos.index',['result'=>$result]);
 
     }
@@ -126,7 +126,7 @@ class ProductoController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(ProductoRequest $request, $id)
     {
         $productos=Producto::find($id);
         $datos=array();

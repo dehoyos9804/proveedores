@@ -25,7 +25,7 @@ class CompraRequest extends FormRequest
     {
         return [
             'fecha'=>'required|date',
-            'descripcion'=>'required|min:5|max:500|alpha_spaces',
+            'descripcion'=>'required|min:5|max:500',
             'proveedor_id'=>'required|numeric',
         ];
     }
@@ -45,7 +45,6 @@ class CompraRequest extends FormRequest
      'proveedor_id.required'=>'El Proveedor de la Compra es requerido',
     
      'descripcion.min'=>'La Descripcion debe tener al menos 5 caracteres.',
-     'descripcion.alpha_spaces'=>'La  Descripcion solo puede contener letras y espacios.',
      'proveedor_id'=>'El Proveedor de la Compra requiriere ser numérico',
        
     ];

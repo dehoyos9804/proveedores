@@ -24,7 +24,7 @@ class CategoriaRequest extends FormRequest
     public function rules()
     {
         return [
-            'nombre'=>'required|min:5|max:30|alpha_spaces|uppercase',
+            'nombre'=>'required|min:5|max:30',
         ];
     }
     public function attributes()
@@ -40,9 +40,7 @@ class CategoriaRequest extends FormRequest
      
  
      'nombre.min'=>'El Nombre debe tener al menos 5 caracteres',
-     'nombre.alpha_spaces'=>'El Nombre solo puede contener letras y espacios.',
-     'nombre.uppercase'=>'El Nombre debe tener alguna letra en mayúscula',
-       
+    
     ];
     }
 

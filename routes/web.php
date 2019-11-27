@@ -38,6 +38,7 @@ $router->get('proveedor/{id}/delete',['as'=>'proveedor.delete', 'uses'=>'Proveed
 Route::Resource('proveedores','ProveedorController');
 
 //Rutas del Producto
+
 Route::resource( 'productos', 'ProductoController');
 $router->get('producto/{id}/delete',['as'=>'producto.delete', 'uses'=>'ProductoController@delete',]);
 $router->patch('producto/{id}',['as'=>'producto.update', 'uses'=>'ProductoController@update',]);

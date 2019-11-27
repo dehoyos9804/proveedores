@@ -24,7 +24,7 @@ class ProveedorRequest extends FormRequest
     public function rules()
     {
         return [
-            'nombre'=>'required|min:5|max:30|alpha_spaces|uppercase',
+            'nombre'=>'required|min:5|max:30',
            'direccion'=>'required|alpha_num',
            'contacto'=>'required',
         'telefono'=>'required|min:4|numeric',
@@ -52,8 +52,7 @@ class ProveedorRequest extends FormRequest
  
 
      'nombre.min'=>'El Nombre debe tener al menos 5 caracteres',
-     'nombre.alpha_spaces'=>'El Nombre solo puede contener letras y espacios.',
-     'nombre.uppercase'=>'El Nombre debe tener alguna letra en mayúscula',
+     
 
      'direccion.alpha_num'=>'La Dirección solo puede contener  letras y números.',
 
