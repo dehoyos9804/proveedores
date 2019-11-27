@@ -34,7 +34,7 @@
                                                     <td>{{$key->cantidad}}</td>
                                                     <td>{{$key->valor_unitario}}</td>
                                                     <td>
-                                                        <button class="btn btn-danger btn-rounded btn-sm" ><span class="fa fa-times"></span></button>
+                                                        <a href="{{route('detalle_compra.delete',['id'=>$key->id])}}" class="btn btn-danger btn-rounded btn-sm" ><span class="fa fa-times"></span></a>
                                                     </td>
                                                 </tr>
                                                 @endforeach
@@ -57,7 +57,7 @@
 @endsection
 
 @section('titlepage')
-  <h2><span class="fa fa-arrow-circle-o-left"></span> <b>Productos</b></h2>
+  <h2><span class="fa fa-arrow-circle-o-left"></span> <b>Detalle de compra</b></h2>
 @endsection
 
 @section('men')

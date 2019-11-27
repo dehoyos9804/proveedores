@@ -11,9 +11,9 @@
 |
 */
 
-Route::get('/', function () {
+/*Route::get('/', function () {
     return view('/compras/create');
-});
+});*/
 
 //Auth::routes();
 
@@ -29,6 +29,7 @@ $router->get('compra/{id}/delete',['as'=>'compra.delete', 'uses'=>'ComprasContro
 
 /*RUTAS PARA EL DETALLE DE COMPRA*/
 $router->get('detalle_compra/{id}',['as'=>'detalle_compra.index', 'uses'=>'DetalleCompraController@index',]);
+$router->get('detalle_compra/{id}/delete',['as'=>'detalle_compra.delete', 'uses'=>'DetalleCompraController@delete',]);
 /* FIN RUTAS PARA EL DETALLE DE COMPRA*/
 
 // rutas proveedor
