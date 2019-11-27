@@ -26,4 +26,10 @@ class DetalleCompraController extends Controller
         return view('detallecompras.index')
             ->with('vardetalle',$vardetalle);
     }
+
+    public function delete($id){
+        $varcompra=Detalle_Compra::find($id);
+        $varcompra->delete();
+        return redirect()->route('detalle_compra.index');
+    }
 }

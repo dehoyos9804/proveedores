@@ -27,7 +27,17 @@ class ProductoController extends Controller
      */
     public function index()
     {
-        $productos=Producto::all();
+        $productos=Producto_Proveedor::select('productos.id','productos.nombre', 'productos.descripcion','categorias.nombre as nombrecategoria', 'proveedores.nombre as nombreproveedor')
+        ->from('producto_proveedor')
+        ->join('productos', function($query){
+            $query->on('productos.id', '=','producto_proveedor.producto_id');
+        })
+        ->join('proveedores', function($query){
+            $query->on('proveedores.id', '=', 'producto_proveedor.proveedor_id');
+        })
+        ->join('categorias', function($query){
+            $query->on('categorias.id', '=', 'productos.categoria_id');
+        })->get();
         return view('productos.index',['productos'=>$productos]);
 
     }

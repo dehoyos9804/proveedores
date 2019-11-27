@@ -34,8 +34,8 @@
                                                 <td>{{$producto->id}}</td>
                                                 <td>{{$producto->nombre}}</td>
                                                 <td>{{$producto->descripcion}}</td>
-                                                <td>{{$producto->categoria_id}}</td>
-                                                <td>$</td>  
+                                                <td>{{$producto->nombrecategoria}}</td>
+                                                <td>{{$producto->nombreproveedor}}</td>  
                                                 <td>
                                                
                                                 <a href="{{ route('productos.edit',['id'=>$producto->id]) }}"><button class="btn btn-default btn-rounded btn-sm"><span class="fa fa-pencil"></span></button>
