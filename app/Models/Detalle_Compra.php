@@ -14,7 +14,7 @@ class Detalle_Compra extends Model
        return $this->belongsTo('App\Models\Proveedor_Producto');
     }
     
-    public function compras() {
-        return $this->belongsTo('App\Models\Compra');
-     }
+   public function compras() {
+      return $this->belongsTo('App\Models\Compra');
+   }
 }

@@ -10,13 +10,12 @@ class Proveedor extends Model
 
     protected $fillable = ['id', 'nombre', 'direccion','contacto','telefono','pagina_web'];
 
-    public function productos() {
-       return $this->belongsToMany('App\Models\Producto');
-    }
+   public function productos(){
+      return $this->belongsToMany('App\Models\Producto');
+   }
     
-    public function compras() {
+   public function compras(){
         return $this->hasMany('App\Models\Compra');
-        
-     }
+   }
 
 }

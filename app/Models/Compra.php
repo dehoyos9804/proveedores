@@ -15,7 +15,9 @@ class Compra extends Model
        
     }
     
-    public function detalle_compras() {
-        return $this->hasMany('App\Models\Detalle_Compra');
-     }
+   public function detalle_compras() {
+      return $this->hasMany('App\Models\Detalle_Compra');
+   }
+
+   
 }

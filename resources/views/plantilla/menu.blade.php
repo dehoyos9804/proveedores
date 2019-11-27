@@ -25,7 +25,7 @@
     <a href="index.html"><span class="fa fa-desktop"></span> <span class="xn-text">Inicio</span></a>                        
 </li>                    
 <li>
-    <a href="#"><span class="fa  fa-shopping-cart"></span> <span class="xn-text">Compras</span></a>
+    <a href="{{route('compra.index')}}"><span class="fa  fa-shopping-cart"></span> <span class="xn-text">Compras</span></a>
 </li>
 <li>
     <a href="#"><span class="fa fa-qrcode"></span> <span class="xn-text">Categorias</span></a>

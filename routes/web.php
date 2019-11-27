@@ -12,9 +12,21 @@
 */
 
 Route::get('/', function () {
-    return view('/productos/index');
+    return view('/compras/create');
 });
 
-Auth::routes();
+//Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+//Route::get('/home', 'HomeController@index')->name('home');
+/*RUTAS PARA COMPRAS*/
+$router->get('compra',['as'=>'compra.index', 'uses'=>'ComprasController@index',]);
+$router->get('compra/create',['as'=>'compra.create', 'uses'=>'ComprasController@create',]);
+$router->post('compra',['as'=>'compra.store', 'uses'=>'ComprasController@store',]);
+$router->get('venta/{id}/edit',['as'=>'ventas.edit', 'uses'=>'VentaController@edit',]);
+//$router->patch('venta/{id}',['as'=>'ventas.update', 'uses'=>'VentaController@update',]);
+$router->get('compra/{id}/delete',['as'=>'compra.delete', 'uses'=>'ComprasController@delete',]);
+/*FIN RUTAS COMPRAS*/
+
+/*RUTAS PARA EL DETALLE DE COMPRA*/
+$router->get('detalle_compra/{id}',['as'=>'detalle_compra.index', 'uses'=>'DetalleCompraController@index',]);
+/* FIN RUTAS PARA EL DETALLE DE COMPRA*/

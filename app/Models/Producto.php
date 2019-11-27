@@ -14,8 +14,8 @@ class Producto extends Model
        return $this->belongsTo('App\Models\Categoria','categoria_id');
     }
 
-    public function proveedores() {
+   //muchos a muchos
+   public function proveedores() {
         return $this->belongsToMany('App\Models\Proveedor');
-        
-     }
+   }
 }
