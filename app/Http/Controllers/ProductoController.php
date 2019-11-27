@@ -103,7 +103,6 @@ class ProductoController extends Controller
         ->join('producto_proveedor', 'proveedor.proveedor_id', '=', 'producto_proveedor.id')
         ->select('producto_proveedor.proveedor_id')
         ->get();
-        //
         return view('productos.index',['result'=>$result]);
 
     }

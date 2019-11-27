@@ -50,6 +50,7 @@
                               <span class="help-block">
                                   <span class="glyphicon glyphicon-zoom-in"></span> <b>Click</b>para registrar nueva categoria
                               </span>
+
                               
                           </a>
                           

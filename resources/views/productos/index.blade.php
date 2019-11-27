@@ -39,8 +39,7 @@
                                                 <td>
                                                
                                                 <a href="{{ route('productos.edit',['id'=>$producto->id]) }}"><button class="btn btn-default btn-rounded btn-sm"><span class="fa fa-pencil"></span></button>
-                                                
-                                               
+                                        
                                                 <a href="{{ route('producto.delete',['id'=>$producto->id]) }}"><button class="btn btn-danger btn-rounded btn-sm" onClick="delete_row('trow_1');"><span class="fa fa-times"></span></button>
                                                
                                                 </td>

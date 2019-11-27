@@ -24,7 +24,7 @@ class PermissionTableSeeder extends Seeder
        'proveedores-create',
        'proveedores-edit',
        'proveedores-delete',
-       'categoria-list'
+       'categoria-list',
        
       ];
 

@@ -19,6 +19,7 @@
 
 
 //Rutas del Producto
+
 Route::resource( 'productos', 'ProductoController');
 $router->get('producto/{id}/delete',['as'=>'producto.delete', 'uses'=>'ProductoController@delete',]);
 $router->patch('producto/{id}',['as'=>'producto.update', 'uses'=>'ProductoController@update',]);

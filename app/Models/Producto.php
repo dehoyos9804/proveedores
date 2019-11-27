@@ -18,6 +18,5 @@ class Producto extends Model
         return $this->belongsToMany('App\Models\Proveedor')
         ->withTimestamps();
         
-        
      }
 }
