@@ -8,7 +8,7 @@
         <div class="panel-heading">
             <h2 class="panel-title">Informe de categorias</h2>
                 <div class="btn-group pull-right">
-                    <a href="#" class="btn btn-danger"><i class="fa fa-bars"></i>Nueva categoria</a>
+                    <a href="{{route('categoria.create')}}" class="btn btn-danger"><i class="fa fa-bars"></i>Nueva categoria</a>
                 </div>                                                       
             </div>
             <div class="panel-body panel-body-table">                                
@@ -18,22 +18,24 @@
                             <div class="panel panel-default">
                                 <div class="panel-body">
                                         <table class="table datatable table-bordered table-striped table-actions">
-                                            <thead>
+                                            <thead> 
                                                 <tr>
-                                                    <th width="50">id</th>
-                                                    <th class="text-center">nombre categoria</th>
-                                                    <th width="120">actions</th>
+                                                    <th width="90">id</th>
+                                                    <th class="text-center">Categoria</th>
+                                                    <th width="200">actions</th>
                                                 </tr>
                                             </thead>
                                             <tbody>                                            
-                                                <tr id="trow_1">
-                                                    <td class="text-center">1</td>
-                                                    <td class="text-center"><strong>John Doe</strong></td>
-                                                    <td>
-                                                        <button class="btn btn-default btn-rounded btn-sm"><span class="fa fa-pencil"></span></button>
-                                                        <button class="btn btn-danger btn-rounded btn-sm" onClick="delete_row('trow_1');"><span class="fa fa-times"></span></button>
-                                                    </td>
-                                                </tr>
+                                                @foreach($categorias as $categoria)
+                                              <tr>
+                                                <td>{{$categoria->id}}</td>
+                                                <td>{{$categoria->nombre}}</td>
+                                                <td>
+                                                  <a href="{{route('categoria.editar',['id'=>$categoria->id])}}" class="btn btn-info btn-sm">Editar</a>
+                                                  <a href="{{route('categoria.delete',['id'=>$categoria->id])}}" class="btn btn-danger btn-sm">Eliminar</a>
+                                                </td>
+                                              </tr>
+                                            @endforeach
                                             </tbody>
                                         </table>                               
                                 </div>

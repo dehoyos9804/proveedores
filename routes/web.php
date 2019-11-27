@@ -43,3 +43,11 @@ $router->get('producto/{id}/delete',['as'=>'producto.delete', 'uses'=>'ProductoC
 $router->patch('producto/{id}',['as'=>'producto.update', 'uses'=>'ProductoController@update',]);
 $router->patch('productos',['as'=>'productos.list', 'uses'=>'ProductoController@list',]);
 
+//Rutas de Categoria
+$router->get('categoria',['as'=>'categoria.index', 'uses'=>'CategoriaController@index',]);
+$router->get('categoria/create',['as'=>'categoria.create', 'uses'=>'CategoriaController@create',]);
+$router->get('categoria/{id}/editar',['as'=>'categoria.editar', 'uses'=>'CategoriaController@edit',]);
+Route::patch('categoria/{id}',['as'=>'categoria.update', 'uses'=>'CategoriaController@update',]);
+$router->get('categoria/{id}/delete',['as'=>'categoria.delete', 'uses'=>'CategoriaController@delete',]);
+Route::post('categoria',['as'=>'categoria.store', 'uses'=>'CategoriaController@store']);
+
