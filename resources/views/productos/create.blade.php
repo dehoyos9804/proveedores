@@ -13,6 +13,7 @@
                   <li><a href="#" class="panel-collapse"><span class="fa fa-angle-down"></span></a></li>
                   <li><a href="#" class="panel-remove"><span class="fa fa-times"></span></a></li>
               </ul>
+              
             </div>
             <div class="panel-body">
               <div class="row">

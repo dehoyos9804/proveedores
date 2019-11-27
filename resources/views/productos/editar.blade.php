@@ -50,7 +50,9 @@
                               <span class="help-block">
                                   <span class="glyphicon glyphicon-zoom-in"></span> <b>Click</b>para registrar nueva categoria
                               </span>
+                              
                           </a>
+                          
                       </div>
                       <div class="col-md-3">
                         <a href="" class="btn btn-info btn-addon"><i class="glyphicon glyphicon-plus"></i>Categoria</a>

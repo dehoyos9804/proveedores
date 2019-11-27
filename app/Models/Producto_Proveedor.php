@@ -14,4 +14,5 @@ class Producto_Proveedor extends Model
     public function detalle_compras() {
        return $this->hasMany('App\Models\Detalle_Compra')->withTimestamps();
     }
+    
 }
