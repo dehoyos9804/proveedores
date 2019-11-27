@@ -16,12 +16,12 @@ class CreateDetalleComprasTable extends Migration
         Schema::create('detalle_compras', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('compra_id')->unsigned();
-            $table->integer('proveedor_producto_id')->unsigned();
+            $table->integer('producto_proveedor_id')->unsigned();
             $table->integer('cantidad');
             $table->double('valor_unitario');
             $table->foreign('compra_id')->references('id')->on('compras')->onDelete('CASCADE')->onCascade('CASCADE');
-            $table->foreign('proveedor_producto_id')->references('id')->on('proveedor_productos')->onDelete('CASCADE')->onCascade('CASCADE');
-            $table->timestamps();        
+            $table->foreign('producto_proveedor_id')->references('id')->on('producto_proveedor')->onDelete('CASCADE')->onCascade('CASCADE');
+            $table->timestamps(); 
         });
     }
 

@@ -194,7 +194,9 @@
         <!-- START PLUGINS -->
         <script type="text/javascript" src='{{url("/admin-lte")}}/js/plugins/jquery/jquery.min.js'></script>
         <script type="text/javascript" src='{{url("/admin-lte")}}/js/plugins/jquery/jquery-ui.min.js'></script>
-        <script type="text/javascript" src='{{url("/admin-lte")}}/js/plugins/bootstrap/bootstrap.min.js'></script>        
+        <script type="text/javascript" src='{{url("/admin-lte")}}/js/plugins/bootstrap/bootstrap.min.js'></script> 
+
+        @stack('scripts')         
         <!-- END PLUGINS -->
 
         <!-- START THIS PAGE PLUGINS-->        

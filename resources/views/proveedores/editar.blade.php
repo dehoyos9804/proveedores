@@ -4,7 +4,9 @@
 <!-- START RESPONSIVE TABLES -->
 <div class="row">
       <div class="col-md-12">
-        <form class="form-horizontal" id="formcomida" name="formcomida" action="" method="POST">
+        <form class="form-horizontal" id="formcomida" name="formcomida" action="{{route('proveedores.update',['id'=>$proveedores->id])}}" method="POST">
+     {{csrf_field()}}
+        <input type="hidden" name="_method" value="PATCH">
           <div class="panel panel-warning">
             <div class="panel-heading">
               <h3 class="panel-title"><span class="fa  fa-cutlery"></span><b> Editar proveedor</b></h3>
@@ -72,7 +74,7 @@
               </div>
               </div><!--fin panel body-->
               <div class="panel-footer">
-              <a href="" class="btn btn-default">Cancelar</a>
+              <a href="{{route('proveedores.index')}}" class="btn btn-default">Cancelar</a>
               <button class="btn btn-info pull-right">Editar</button>
             </div>
           </div>
