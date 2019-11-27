@@ -4,8 +4,10 @@
 <!-- START RESPONSIVE TABLES -->
 <div class="row">
       <div class="col-md-12">
-        <form class="form-horizontal" id="formcomida" name="formcomida" action="#" method="POST">
+        <form class="form-horizontal" id="formcomida" name="formcomida" action="{{route('categoria.update',['id'=>$categoria->id]) }}" method="POST">
           <div class="panel panel-warning">
+            @csrf
+          <input type="hidden" name="_method" value="PATCH">
             <div class="panel-heading">
               <h3 class="panel-title"><span class="fa  fa-cutlery"></span><b> Editar Categoria</b></h3>
               <ul class="panel-controls">
@@ -21,7 +23,7 @@
                         <div class="col-md-9">                                            
                             <div class="input-group">
                                 <span class="input-group-addon"><span class="fa fa-pencil"></span></span>
-                                <input type="text" require id="nombre" name="nombre" class="form-control" placeholder="Nombre de la categoria"/>
+                                <input type="text" require id="nombre" name="nombre" class="form-control" placeholder="Nombre de la categoria" value="{{$categoria->nombre}}"/>
                             </div>
                         </div>
                     </div>
@@ -29,7 +31,7 @@
               </div>
               </div><!--fin panel body-->
               <div class="panel-footer">
-              <a href="" class="btn btn-default">Cancelar</a>
+              <a href="{{route('categoria.index')}}" class="btn btn-default">Cancelar</a>
               <button class="btn btn-info pull-right">Editar</button>
             </div>
           </div>
