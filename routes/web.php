@@ -30,3 +30,8 @@ $router->get('compra/{id}/delete',['as'=>'compra.delete', 'uses'=>'ComprasContro
 /*RUTAS PARA EL DETALLE DE COMPRA*/
 $router->get('detalle_compra/{id}',['as'=>'detalle_compra.index', 'uses'=>'DetalleCompraController@index',]);
 /* FIN RUTAS PARA EL DETALLE DE COMPRA*/
+
+// rutas proveedor
+Route::get('/home', 'HomeController@index')->name('home');
+$router->get('proveedor/{id}/delete',['as'=>'proveedor.delete', 'uses'=>'ProveedorController@delete',]);
+Route::Resource('proveedores','ProveedorController');
